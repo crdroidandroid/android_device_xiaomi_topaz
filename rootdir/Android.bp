@@ -62,6 +62,12 @@ sh_binary {
 }
 
 sh_binary {
+    name: "init.qcom.post.boot.sh",
+    src: "bin/init.qcom.post.boot.sh",
+    vendor: true,
+}
+
+sh_binary {
     name: "init.goodix.events.sh",
     src: "bin/init.goodix.events.sh",
     vendor: true,
