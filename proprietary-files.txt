@@ -77,6 +77,7 @@ vendor/lib/liblx-ar_util.so
 vendor/lib/libmcs.so
 vendor/lib/libpalclient.so
 vendor/lib/libqtigefar.so
+vendor/lib/libqti_vndfwk_detect_vendor.so
 vendor/lib/libsndcardparser.so
 -vendor/lib/vendor.qti.hardware.pal@1.0-impl.so
 vendor/lib/vendor.qti.hardware.pal@1.0.so
@@ -98,7 +99,9 @@ vendor/lib64/liblx-ar_util.so
 vendor/lib64/libmcs.so
 vendor/lib64/libpalclient.so
 vendor/lib64/libqtigefar.so
+vendor/lib64/libqti_vndfwk_detect_vendor.so
 vendor/lib64/libsndcardparser.so
+vendor/lib64/libwfdaac_vendor.so
 -vendor/lib64/vendor.qti.hardware.pal@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.pal@1.0.so
 
