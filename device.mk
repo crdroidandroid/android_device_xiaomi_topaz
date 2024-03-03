@@ -545,6 +545,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     $(call inherit-product, hardware/xiaomi/aidl/vibrator/vibrator-vendor-product.mk)
 
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator-V1-ndk_platform.vendor
+
 # WiFi
 PRODUCT_PACKAGES += \
     android.hardware.wifi-service \
