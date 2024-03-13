@@ -19,7 +19,6 @@ import android.view.Display.HdrCapabilities;
 
 import org.lineageos.settings.camera.NfcCameraService;
 import org.lineageos.settings.display.ColorService;
-import org.lineageos.settings.dolby.DolbyUtils;
 import org.lineageos.settings.doze.AodBrightnessService;
 import org.lineageos.settings.doze.DozeUtils;
 import org.lineageos.settings.doze.PocketService;
@@ -57,7 +56,6 @@ public class BootCompletedReceiver extends BroadcastReceiver {
 
     private static void onBootCompleted(Context context) {
         // Data is now accessible (user has just unlocked).
-        DolbyUtils.getInstance(context).onBootCompleted();
         DozeUtils.checkDozeService(context);
         RefreshUtils.initialize(context);
         ThermalUtils.startService(context);
@@ -69,10 +67,8 @@ public class BootCompletedReceiver extends BroadcastReceiver {
     }
 
     private static void overrideHdrTypes(Context context) {
-        // Override HDR types to enable Dolby Vision
         final DisplayManager dm = context.getSystemService(DisplayManager.class);
         dm.overrideHdrTypes(Display.DEFAULT_DISPLAY, new int[]{
-                HdrCapabilities.HDR_TYPE_DOLBY_VISION, HdrCapabilities.HDR_TYPE_HDR10,
                 HdrCapabilities.HDR_TYPE_HLG, HdrCapabilities.HDR_TYPE_HDR10_PLUS});
     }
 }
