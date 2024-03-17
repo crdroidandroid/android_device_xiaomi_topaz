@@ -19,9 +19,6 @@ import android.view.Display.HdrCapabilities;
 
 import org.lineageos.settings.camera.NfcCameraService;
 import org.lineageos.settings.display.ColorService;
-import org.lineageos.settings.doze.AodBrightnessService;
-import org.lineageos.settings.doze.DozeUtils;
-import org.lineageos.settings.doze.PocketService;
 import org.lineageos.settings.gestures.GestureUtils;
 import org.lineageos.settings.refreshrate.RefreshUtils;
 import org.lineageos.settings.thermal.ThermalUtils;
@@ -48,15 +45,12 @@ public class BootCompletedReceiver extends BroadcastReceiver {
     private static void onLockedBootCompleted(Context context) {
         // Services that don't require reading from data.
         ColorService.startService(context);
-        AodBrightnessService.startService(context);
-        PocketService.startService(context);
         NfcCameraService.startService(context);
         overrideHdrTypes(context);
     }
 
     private static void onBootCompleted(Context context) {
         // Data is now accessible (user has just unlocked).
-        DozeUtils.checkDozeService(context);
         RefreshUtils.initialize(context);
         ThermalUtils.startService(context);
 

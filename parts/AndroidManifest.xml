@@ -23,8 +23,6 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.DEVICE_POWER" />
 
-    <protected-broadcast android:name="com.android.systemui.doze.pulse" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -42,16 +40,6 @@
                 <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
-
-        <activity
-            android:name=".doze.DozeSettingsActivity"
-            android:label="@string/ambient_display_title"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="org.lineageos.settings.device.DOZE_SETTINGS" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
 
         <activity
             android:name=".speaker.ClearSpeakerActivity" 
@@ -127,18 +115,6 @@
         </service>
 
         <service
-            android:name=".doze.DozeService"
-            android:exported="true"
-            android:permission="DozeService">
-        </service>
-
-        <service
-            android:name=".doze.PocketService"
-            android:exported="true"
-            android:permission="PocketService">
-        </service>
-
-        <service
             android:name=".display.ColorService"
             android:exported="true"
             android:permission="ColorService">
@@ -148,12 +124,6 @@
             android:name=".camera.NfcCameraService"
             android:exported="true"
             android:permission="NfcCameraService">
-        </service>
-
-        <service
-            android:name=".doze.AodBrightnessService"
-            android:exported="true"
-            android:permission="AodBrightnessService">
         </service>
 
         <service
