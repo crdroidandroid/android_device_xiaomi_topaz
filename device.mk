@@ -336,10 +336,7 @@ PRODUCT_PACKAGES += \
 
 # Media stagefright
 PRODUCT_PACKAGES += \
-    libstagefrighthw \
-    libstagefright_omx.vendor \
-    libstagefright_softomx.vendor \
-    libstagefright_softomx_plugin.vendor
+    libstagefrighthw
 
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/media/,$(TARGET_COPY_OUT_VENDOR)/etc)
